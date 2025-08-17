@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keepiko - Get Early Access</title>
-    <!-- THIS IS THE NEW FAVICON LINK -->
     <link rel="icon" type="image/svg+xml" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Keepica-jRFadChFRKmeb37xOdf2vau7nJeAya.svg">
     <style>
         * {
@@ -138,6 +137,25 @@
             object-fit: cover;
         }
 
+        /* --- NEW FOOTER STYLES --- */
+        .footer-content {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .footer-divider {
+            border: 0;
+            border-top: 1px solid #e5e7eb;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #9ca3af;
+            text-align: center;
+        }
+        /* --- END NEW FOOTER STYLES --- */
+
         /* --- DESKTOP LAYOUT --- */
         @media (min-width: 1024px) {
             .main-content {
@@ -171,6 +189,10 @@
 
             .title {
                 font-size: 50px;
+            }
+
+            .footer-text {
+                text-align: left;
             }
         }
         
@@ -218,6 +240,7 @@
         .content > *:nth-child(2) { animation-delay: 0.1s; }
         .content > *:nth-child(3) { animation-delay: 0.2s; }
         .content > *:nth-child(4) { animation-delay: 0.3s; }
+        .content > *:nth-child(5) { animation-delay: 0.4s; } /* ADDED: Animation for footer */
     </style>
     
     <!-- Microsoft Clarity Code -->
@@ -227,17 +250,17 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "snxmk8dbb2");
-</script>
+    </script>
 
     <!-- Google Analytics Code -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-QMQ205WG9P');
-</script>
+      gtag('config', 'G-QMQ205WG9P');
+    </script>
 </head>
 <body>
     <div class="container">
@@ -259,7 +282,7 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="cta-button"
-                    onclick="gtag('event', 'join_waitlist_click', {'event_category': 'conversion', 'event_label': 'Waitlist CTA'});">
+                   onclick="gtag('event', 'join_waitlist_click', {'event_category': 'conversion', 'event_label': 'Waitlist CTA'});">
                     Join the waitlist
                 </a>
                 <div class="social-proof">
@@ -270,6 +293,16 @@
                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                     </div>
                 </div>
+
+                <!-- NEW FOOTER CONTENT STARTS HERE -->
+                <div class="footer-content">
+                    <hr class="footer-divider">
+                    <p class="footer-text">
+                        keepiko.info@gmail.com | &copy; 2025 Keepiko. All rights reserved.
+                    </p>
+                </div>
+                <!-- NEW FOOTER CONTENT ENDS HERE -->
+
             </div>
         </div>
     </div>
