@@ -11,14 +11,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: #f9fafb;
             line-height: 1.6;
             overflow-x: hidden;
         }
-
         .container {
             min-height: 100vh;
             display: flex;
@@ -26,7 +24,6 @@
             justify-content: center;
             padding: 20px;
         }
-
         .main-content {
             width: 100%;
             display: flex;
@@ -34,14 +31,12 @@
             align-items: center;
             gap: 50px;
         }
-
         .illustration {
             position: relative;
             width: 280px;
             height: 280px;
             flex-shrink: 0;
         }
-
         .book-3d {
             position: absolute;
             width: 100%;
@@ -53,11 +48,9 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             cursor: pointer;
         }
-
         .book-3d:hover {
             transform: rotate(6deg);
         }
-
         .book-inner {
             position: absolute;
             top: 15px;
@@ -71,12 +64,10 @@
             justify-content: center;
             overflow: hidden;
         }
-
         .content {
             text-align: center;
             width: 100%;
         }
-
         .title {
             font-size: 42px;
             font-weight: 800;
@@ -84,7 +75,6 @@
             margin-bottom: 16px;
             line-height: 1.1;
         }
-
         .subtitle {
             font-size: 18px;
             color: #6b7280;
@@ -94,7 +84,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .cta-button {
             display: inline-block;
             background-color: #3b82f6;
@@ -108,13 +97,11 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
-
         .cta-button:hover {
             background-color: #2563eb;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
-
         .social-proof {
             display: flex;
             align-items: center;
@@ -123,11 +110,9 @@
             font-size: 14px;
             color: #9ca3af;
         }
-
         .avatars {
             display: flex;
         }
-
         .avatar {
             width: 32px;
             height: 32px;
@@ -136,27 +121,39 @@
             margin-left: -12px;
             object-fit: cover;
         }
-
-        /* --- NEW FOOTER STYLES --- */
         .footer-content {
             margin-top: 40px;
             width: 100%;
         }
-
         .footer-divider {
             border: 0;
             border-top: 1px solid #e5e7eb;
             margin-bottom: 20px;
         }
-
         .footer-text {
             font-size: 14px;
             color: #9ca3af;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
-        /* --- END NEW FOOTER STYLES --- */
+        /* NEW STYLE FOR THE CONTACT BUTTON */
+        .footer-contact-button {
+            display: inline-block;
+            padding: 5px 15px;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .footer-contact-button:hover {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
 
-        /* --- DESKTOP LAYOUT --- */
         @media (min-width: 1024px) {
             .main-content {
                 max-width: 1100px;
@@ -166,62 +163,53 @@
                 margin-right: auto;
                 gap: 70px;
             }
-
             .content {
                 text-align: left;
                 width: auto;
                 max-width: 450px;
             }
-
             .subtitle {
                 margin-left: 0;
                 margin-right: 0;
             }
-
             .social-proof {
                 justify-content: flex-start;
             }
-            
             .illustration {
                 width: 330px;
                 height: 330px;
             }
-
             .title {
                 font-size: 50px;
             }
-
+            /* Align footer items horizontally on desktop */
             .footer-text {
-                text-align: left;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 15px;
             }
         }
         
-        /* --- MOBILE-SPECIFIC TWEAKS --- */
         @media (max-width: 480px) {
             .container {
                 padding: 50px 20px;
             }
-
             .illustration {
                 width: 240px;
                 height: 240px;
             }
-            
             .title {
                 font-size: 34px;
             }
-
             .subtitle {
                 font-size: 17px;
             }
-
             .cta-button {
                 padding: 15px 30px;
                 font-size: 17px;
             }
         }
 
-        /* Animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -232,35 +220,18 @@
                 transform: translateY(0);
             }
         }
-
         .content > * {
             animation: fadeInUp 0.6s ease forwards;
         }
-
         .content > *:nth-child(2) { animation-delay: 0.1s; }
         .content > *:nth-child(3) { animation-delay: 0.2s; }
         .content > *:nth-child(4) { animation-delay: 0.3s; }
-        .content > *:nth-child(5) { animation-delay: 0.4s; } /* ADDED: Animation for footer */
+        .content > *:nth-child(5) { animation-delay: 0.4s; }
     </style>
     
-    <!-- Microsoft Clarity Code -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "snxmk8dbb2");
-    </script>
-
-    <!-- Google Analytics Code -->
+    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-QMQ205WG9P');
-    </script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
 <body>
     <div class="container">
@@ -294,14 +265,15 @@
                     </div>
                 </div>
 
-                <!-- NEW FOOTER CONTENT STARTS HERE -->
+                <!-- MODIFIED FOOTER CONTENT STARTS HERE -->
                 <div class="footer-content">
                     <hr class="footer-divider">
-                    <p class="footer-text">
-                        keepiko.info@gmail.com | &copy; 2025 Keepiko. All rights reserved.
-                    </p>
+                    <div class="footer-text">
+                        <a href="/support" class="footer-contact-button">Contact us</a>
+                        <span>&copy; 2025 Keepiko. All rights reserved.</span>
+                    </div>
                 </div>
-                <!-- NEW FOOTER CONTENT ENDS HERE -->
+                <!-- MODIFIED FOOTER CONTENT ENDS HERE -->
 
             </div>
         </div>
