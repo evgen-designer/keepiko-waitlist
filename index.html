@@ -147,25 +147,26 @@
             }
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; z-index: 2; }
-
-            /* NEW MASKING IMPLEMENTATION */
+            
             .mobile-where-guy-mask {
                 width: 220px;
                 height: 220px;
                 background-color: #FF8FAB;
                 border-radius: 50%;
                 position: absolute;
-                right: 155px; /* CHANGED: Was 125px, moved 30px left */
-                bottom: 180px; /* CHANGED: Was 150px, moved 30px up */
+                right: 155px;
+                bottom: 180px;
                 z-index: 1;
-                overflow: hidden; /* This is the magic property that clips the image */
+                overflow: hidden;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
             .mobile-where-guy-mask img {
-                width: 110%; /* Make image slightly larger than the circle to ensure edges are clipped */
+                width: 94%; /* CHANGED: Was 110% */
                 height: auto;
+                position: relative; /* NEW: for positioning */
+                top: 10px; /* NEW: move down */
             }
             
             .mobile-nav {
@@ -183,8 +184,8 @@
     </style>
     <!-- Your Analytics Scripts in Head -->
     <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ2S5WG9P"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ2S5WG9P'); </script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -218,7 +219,6 @@
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
             <div class="mobile-only mobile-illustration-container">
-                <!-- Replaced the old div with a proper mask container holding the image -->
                 <div class="illustration mobile-where-guy-mask">
                     <img src="https://www.keepiko.com/images/where-guy.svg" alt="">
                 </div>
