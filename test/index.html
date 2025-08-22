@@ -131,9 +131,9 @@
 
             main {
                 flex-direction: column; text-align: center;
-                padding: 40px 0;
+                padding-top: 40px; /* CHANGED: Removed bottom padding */
                 min-height: auto;
-                gap: 30px; /* CHANGED: Reduced space between text and illustrations */
+                gap: 20px; /* CHANGED: Reduced space */
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
@@ -148,7 +148,7 @@
             }
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
-            .mobile-where-guy { width: 190px; right: 210px; bottom: 0; } /* CHANGED: Was 200px */
+            .mobile-where-guy { width: 190px; right: 210px; bottom: 0; }
             
             .mobile-nav {
                 display: flex; justify-content: center; gap: 30px;
@@ -159,12 +159,12 @@
             .mobile-nav a { color: #111; font-weight: 500; text-decoration: none; }
             
             footer { padding: 20px 0; text-align: center; }
-            .footer-divider { display: none; } /* CHANGED: Hidden on mobile */
+            .footer-divider { display: none; }
             footer p { color: #000; }
         }
     </style>
     <!-- Your Analytics Scripts in Head -->
-    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
+    <script type="text-javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
