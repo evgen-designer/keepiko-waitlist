@@ -113,11 +113,20 @@
             position: absolute;
             pointer-events: none;
         }
-        .iphone-illustration {
-            width: 385px; /* CHANGED: Was 405px */
+        .illustration-group { /* NEW CONTAINER */
+            position: absolute;
             right: 0;
             bottom: 0;
-            z-index: 2;
+            width: 580px; /* Width to contain both images */
+            height: 520px; /* Height to contain both images */
+            z-index: 1;
+        }
+        .iphone-illustration {
+            width: 385px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2; /* In front */
         }
         .dialog-bubble {
             width: 280px;
@@ -132,13 +141,14 @@
             right: 230px;
             bottom: 365px;
             z-index: 4;
-            white-space: nowrap; /* CHANGED: Keeps text on one line */
+            white-space: nowrap;
         }
         .where-guy {
-            width: 230px; /* CHANGED: Was 242px */
-            left: 550px; /* CHANGED: Was 480px, moved far right */
+            width: 230px;
+            position: absolute;
+            left: 0; /* Positioned at the left edge of the group */
             bottom: 0;
-            z-index: 1;
+            z-index: 1; /* Behind */
         }
 
         /* --- Footer --- */
@@ -153,8 +163,8 @@
             height: 1px;
             background-color: rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            max-width: 530px; /* CHANGED: Stops the line before the 'where-guy' illustration */
-            margin-left: 0; /* Ensures it stays left-aligned */
+            max-width: 500px; /* CHANGED: Shorter to match text block width */
+            margin-left: 0;
         }
 
         /* --- Responsive Design --- */
@@ -166,9 +176,9 @@
         @media (max-width: 1024px) {
             main { flex-direction: column; text-align: center; }
             .hero-text { flex-basis: auto; }
-            .hero-images, .illustration { display: none; }
+            .hero-images, .illustration, .illustration-group { display: none; }
             .cta-group { justify-content: center; }
-            .footer-divider { max-width: 100%; } /* Let divider be full width on smaller screens */
+            .footer-divider { max-width: 100%; }
         }
         @media (max-width: 768px) {
             .page-wrapper { padding: 0 20px; }
@@ -204,7 +214,6 @@
                     <div class="social-proof">
                         <div class="avatars">
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
-                            <!-- FIXED BROKEN AVATAR LINK -->
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                         </div>
@@ -223,10 +232,15 @@
         </footer>
     </div>
 
+    <!-- Illustrations and Text Placed Here for Screen-Based Positioning -->
     <p class="illustration dialog-text">Where is my lucky scarf 😩</p>
     <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble" class="illustration dialog-bubble">
-    <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="illustration iphone-illustration">
-    <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person looking for an item" class="illustration where-guy">
+    
+    <!-- NEW: Grouped Illustrations -->
+    <div class="illustration-group">
+        <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person looking for an item" class="where-guy">
+        <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration">
+    </div>
 
 </body>
 </html>
