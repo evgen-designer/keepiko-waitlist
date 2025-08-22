@@ -23,7 +23,7 @@
             z-index: 5;
         }
 
-        /* --- Header --- */
+        /* --- DESKTOP STYLES (Default) --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -42,10 +42,7 @@
             color: #111;
         }
         .logo-area img { height: 32px; }
-        nav {
-            display: flex;
-            gap: 30px;
-        }
+        nav { display: flex; gap: 30px; }
         nav a {
             text-decoration: none;
             color: #111;
@@ -54,28 +51,20 @@
             transition: color 0.2s;
         }
         nav a:hover { color: #000; }
-
-        /* --- Main Hero Section --- */
         main {
             display: flex;
             align-items: center;
             padding: 60px 0;
             min-height: calc(100vh - 170px);
         }
-        .hero-text {
-            flex-basis: 50%;
-        }
+        .hero-text { flex-basis: 50%; }
         .hero-text h1 {
             font-size: 80px;
             font-weight: 700;
             line-height: 85%;
             margin-bottom: 40px;
         }
-        .cta-group {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        .cta-group { display: flex; align-items: center; gap: 20px; }
         .cta-button {
             background-color: #2563EB;
             color: white;
@@ -88,103 +77,101 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .cta-button:hover { transform: translateY(-2px); }
-        .social-proof {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 16px;
-            color: #000;
-        }
+        .social-proof { display: flex; align-items: center; gap: 12px; font-size: 16px; color: #000; }
         .avatars { display: flex; }
         .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid #FF8FAB;
-            margin-left: -12px;
-            object-fit: cover;
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 2px solid #FF8FAB; margin-left: -12px; object-fit: cover;
         }
-        
-        /* --- Image Illustrations Section --- */
-        .hero-images {
-            flex-basis: 50%;
-        }
-        .illustration {
-            position: absolute;
-            pointer-events: none;
-        }
+        .hero-images { flex-basis: 50%; }
+        .illustration, .illustration-group { position: absolute; pointer-events: none; }
         .illustration-group {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 580px;
-            height: 520px;
-            z-index: 1;
+            position: absolute; right: 0; bottom: 0;
+            width: 580px; height: 520px; z-index: 1;
         }
         .iphone-illustration {
-            width: 385px;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            z-index: 2;
+            width: 385px; position: absolute; right: 0; bottom: 0; z-index: 2;
         }
         .dialog-bubble {
-            width: 280px;
-            right: 200px;
-            bottom: 330px;
-            z-index: 3;
+            width: 280px; right: 200px; bottom: 330px; z-index: 3;
         }
         .dialog-text {
-            color: #111;
-            font-weight: 500;
-            font-size: 18px;
-            right: 230px;
-            bottom: 365px;
-            z-index: 4;
-            white-space: nowrap;
+            color: #111; font-weight: 500; font-size: 18px;
+            right: 230px; bottom: 365px; z-index: 4; white-space: nowrap;
         }
         .where-guy {
-            width: 230px;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            z-index: 1;
+            width: 230px; position: absolute; left: 0; bottom: 0; z-index: 1;
         }
-
-        /* --- Footer --- */
         footer {
-            padding: 40px 0 20px 0;
-            font-size: 14px;
-            color: #000;
-            font-weight: 400;
+            padding: 40px 0 20px 0; font-size: 14px; color: #000; font-weight: 400;
         }
         .footer-divider {
-            border: 0;
-            height: 1px;
-            background-color: rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            max-width: 440px;
-            margin-left: 0;
+            border: 0; height: 1px; background-color: rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; max-width: 440px; margin-left: 0;
+        }
+        .mobile-only { display: none; } /* Hide mobile elements by default */
+
+        /* --- DESKTOP SPECIFIC SPACING --- */
+        @media (min-width: 1025px) {
+             main, footer { padding-left: 80px; }
         }
 
-        /* --- Responsive Design --- */
-        @media (min-width: 1024px) {
-             main, footer {
-                padding-left: 80px;
-            }
-        }
+        /* --- MOBILE REDESIGN (Tablet and below) --- */
         @media (max-width: 1024px) {
-            main { flex-direction: column; text-align: center; }
-            .hero-text { flex-basis: auto; }
-            .hero-images, .illustration, .illustration-group { display: none; }
-            .cta-group { justify-content: center; }
-            .footer-divider { max-width: 100%; }
-        }
-        @media (max-width: 768px) {
             .page-wrapper { padding: 0 20px; }
-            header { flex-direction: column; gap: 15px; }
+            header { /* Simplify header */
+                background: none;
+                justify-content: center;
+                margin-top: 40px;
+                padding: 0;
+            }
+            nav.desktop-nav { display: none; } /* Hide desktop nav */
+            .logo-area { color: #fff; } /* Make logo text white on mobile */
+
+            main {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 0;
+                min-height: auto;
+            }
+            .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
-            footer { text-align: center; }
+            .cta-group { justify-content: center; flex-direction: column; }
+            .hero-images { display: none; } /* Hide the desktop spacer */
+            
+            .illustration, .illustration-group { display: none; } /* Hide all desktop illustrations */
+            
+            .mobile-only { display: block; } /* Show mobile-only elements */
+            
+            .mobile-illustration-container {
+                position: relative;
+                width: 100%;
+                height: 380px; /* Set a fixed height for the container */
+                margin-top: 40px;
+            }
+            .mobile-illustration-container .illustration {
+                display: block !important; /* Ensure they are visible */
+                position: absolute;
+            }
+            .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
+            .mobile-where-guy { width: 200px; right: 150px; bottom: 0; }
+            .mobile-dialog-bubble { width: 200px; right: 120px; bottom: 250px; }
+            .mobile-dialog-text {
+                right: 135px; bottom: 275px; color: #111;
+                font-size: 14px; white-space: nowrap;
+            }
+            
+            .mobile-nav {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                padding: 20px 0;
+            }
+            .mobile-nav a { color: #fff; font-weight: 500; text-decoration: none; }
+            
+            footer { padding: 20px 0; text-align: center; }
+            .footer-divider { max-width: 100%; margin: 0 auto 20px auto; }
+            footer p { color: #fff; }
         }
     </style>
     <!-- Your Analytics Scripts in Head -->
@@ -199,7 +186,8 @@
                 <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
                 <span>Keepiko - Simple home inventory app</span>
             </div>
-            <nav>
+            <!-- This nav is for DESKTOP ONLY -->
+            <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
                 <a href="/policy">Privacy</a>
@@ -215,17 +203,29 @@
                         <div class="avatars">
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
-                            <!-- THE FIX IS HERE: 'vercel' is now spelled correctly -->
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                         </div>
                         <span>32+ others just joined</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-images">
-                <!-- Spacer -->
+            <div class="hero-images"><!-- Spacer for desktop --></div>
+            
+            <!-- This illustration container is FOR MOBILE ONLY -->
+            <div class="mobile-only mobile-illustration-container">
+                <p class="illustration mobile-dialog-text">Where is my lucky scarf 😩</p>
+                <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="" class="illustration mobile-dialog-bubble">
+                <img src="https://www.keepiko.com/images/where-guy.svg" alt="" class="illustration mobile-where-guy">
+                <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="" class="illustration mobile-iphone">
             </div>
         </main>
+        
+        <!-- This nav is FOR MOBILE ONLY -->
+        <nav class="mobile-only mobile-nav">
+            <a href="/support">Contact us</a>
+            <a href="/terms">Terms</a>
+            <a href="/policy">Privacy</a>
+        </nav>
 
         <footer>
             <hr class="footer-divider">
@@ -233,14 +233,12 @@
         </footer>
     </div>
 
-    <!-- Illustrations and Text Placed Here for Screen-Based Positioning -->
+    <!-- These illustrations are FOR DESKTOP ONLY -->
     <p class="illustration dialog-text">Where is my lucky scarf 😩</p>
     <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble" class="illustration dialog-bubble">
-    
     <div class="illustration-group">
-        <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person looking for an item" class="where-guy">
-        <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration">
+        <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person" class="illustration where-guy">
+        <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="illustration iphone-illustration">
     </div>
-
 </body>
 </html>
