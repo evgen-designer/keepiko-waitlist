@@ -120,18 +120,19 @@
         @media (max-width: 1024px) {
             .page-wrapper { padding: 0 20px; }
             header {
-                background-color: rgba(255, 255, 255, 0.2); /* CHANGED: Added background */
-                border-radius: 16px; /* CHANGED: Added corners */
-                padding: 15px 25px; /* CHANGED: Added padding */
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
+                padding: 15px 25px;
                 justify-content: center;
-                margin-top: 40px;
+                margin-top: 20px; /* CHANGED: Was 40px */
             }
-            .logo-area span { color: #111; } /* CHANGED: Made text black */
+            .logo-area span { color: #111; }
             nav.desktop-nav { display: none; }
 
             main {
                 flex-direction: column; text-align: center;
-                padding: 40px 0; min-height: auto;
+                padding: 40px 0 0 0; /* CHANGED: Removed bottom padding */
+                min-height: auto;
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
@@ -145,25 +146,22 @@
                 height: 380px; margin-top: 40px;
             }
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
+            /* NEW: Hide bubble and text on mobile */
+            .mobile-dialog-bubble, .mobile-dialog-text { display: none !important; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
-            .mobile-where-guy { width: 200px; right: 210px; bottom: 0; } /* CHANGED: Was 150px, moved 60px left */
-            .mobile-dialog-bubble { width: 200px; right: 120px; bottom: 250px; }
-            .mobile-dialog-text {
-                right: 145px; bottom: 280px; color: #111; /* CHANGED: Positioned text */
-                font-size: 14px; white-space: nowrap;
-            }
+            .mobile-where-guy { width: 200px; right: 210px; bottom: 0; }
             
             .mobile-nav {
                 display: flex; justify-content: center; gap: 30px;
-                padding: 15px 25px; margin: 20px 0; /* CHANGED: Added padding and margin */
-                background-color: rgba(255, 255, 255, 0.2); /* CHANGED: Added background */
-                border-radius: 16px; /* CHANGED: Added corners */
+                padding: 15px 25px; margin: 0; /* CHANGED: Removed margin */
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
             }
-            .mobile-nav a { color: #111; font-weight: 500; text-decoration: none; } /* CHANGED: Made text black */
+            .mobile-nav a { color: #111; font-weight: 500; text-decoration: none; }
             
             footer { padding: 20px 0; text-align: center; }
             .footer-divider { max-width: 100%; margin: 0 auto 20px auto; }
-            footer p { color: #000; } /* CHANGED: Made text black */
+            footer p { color: #000; }
         }
     </style>
     <!-- Your Analytics Scripts in Head -->
