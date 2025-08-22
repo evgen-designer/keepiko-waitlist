@@ -19,8 +19,8 @@
             max-width: 1440px;
             margin: 0 auto;
             padding: 0 40px;
-            position: relative; /* New context for children */
-            z-index: 5; /* Keep content above illustrations */
+            position: relative;
+            z-index: 5;
         }
 
         /* --- Header --- */
@@ -114,20 +114,31 @@
             pointer-events: none;
         }
         .iphone-illustration {
-            width: 425px; /* CHANGED: Was 500px */
+            width: 405px; /* CHANGED: Was 425px */
             right: 0;
             bottom: 0;
             z-index: 2;
         }
         .dialog-bubble {
             width: 280px;
-            right: 220px; /* Adjusted position */
-            bottom: 350px; /* Adjusted position */
+            right: 200px; /* Adjusted position */
+            bottom: 330px; /* Adjusted position */
             z-index: 3;
         }
+        /* NEW: Style for the text on the bubble */
+        .dialog-text {
+            color: #111;
+            font-weight: 500;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            right: 240px; /* Positioned relative to bubble */
+            bottom: 365px; /* Positioned relative to bubble */
+            z-index: 4; /* On top of the bubble */
+        }
         .where-guy {
-            width: 255px; /* CHANGED: Was 300px */
-            left: 280px; /* CHANGED: Was 120px, moved to the right */
+            width: 242px; /* CHANGED: Was 255px */
+            left: 480px; /* CHANGED: Was 280px, moved far right */
             bottom: 0;
             z-index: 1;
         }
@@ -155,7 +166,7 @@
         @media (max-width: 1024px) {
             main { flex-direction: column; text-align: center; }
             .hero-text { flex-basis: auto; }
-            .hero-images, .illustration { display: none; } /* Hide all illustrations on smaller screens */
+            .hero-images, .illustration { display: none; }
             .cta-group { justify-content: center; }
         }
         @media (max-width: 768px) {
@@ -192,7 +203,7 @@
                     <div class="social-proof">
                         <div class="avatars">
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
+                            <img src="https://hebbkx1anhila5yf.public.blob.verbcel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                         </div>
                         <span>32+ others just joined</span>
@@ -210,7 +221,9 @@
         </footer>
     </div>
 
-    <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble saying 'Where is my lucky scarf'" class="illustration dialog-bubble">
+    <!-- Illustrations and Text Placed Here for Screen-Based Positioning -->
+    <p class="illustration dialog-text">Where is my lucky scarf 😩</p>
+    <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble" class="illustration dialog-bubble">
     <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="illustration iphone-illustration">
     <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person looking for an item" class="illustration where-guy">
 
