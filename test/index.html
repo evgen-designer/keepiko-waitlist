@@ -124,42 +124,42 @@
                 border-radius: 16px;
                 padding: 15px 25px;
                 justify-content: center;
-                margin-top: 25px; /* CHANGED: Was 20px */
+                margin-top: 25px;
             }
             .logo-area span { color: #111; }
             nav.desktop-nav { display: none; }
 
             main {
                 flex-direction: column; text-align: center;
-                padding: 40px 0 0 0;
+                padding: 40px 0;
                 min-height: auto;
+                gap: 30px; /* CHANGED: Reduced space between text and illustrations */
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
-            .cta-group { justify-content: center; flex-direction: column; }
+            .cta-group { justify-content: center; flex-direction: column; gap: 15px; }
             .hero-images, .illustration, .illustration-group { display: none; }
             
             .mobile-only { display: block; }
             
             .mobile-illustration-container {
                 position: relative; width: 100%;
-                height: 380px; 
-                margin-top: 0; /* CHANGED: Was 40px, removed space */
+                height: 380px;
             }
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
-            .mobile-where-guy { width: 200px; right: 210px; bottom: 0; }
+            .mobile-where-guy { width: 190px; right: 210px; bottom: 0; } /* CHANGED: Was 200px */
             
             .mobile-nav {
                 display: flex; justify-content: center; gap: 30px;
-                padding: 15px 25px; margin: 0;
+                padding: 15px 25px;
                 background-color: rgba(255, 255, 255, 0.2);
                 border-radius: 16px;
             }
             .mobile-nav a { color: #111; font-weight: 500; text-decoration: none; }
             
             footer { padding: 20px 0; text-align: center; }
-            .footer-divider { max-width: 100%; margin: 0 auto 20px auto; }
+            .footer-divider { display: none; } /* CHANGED: Hidden on mobile */
             footer p { color: #000; }
         }
     </style>
@@ -200,7 +200,6 @@
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
             <div class="mobile-only mobile-illustration-container">
-                <!-- Bubble and text are completely removed from mobile HTML -->
                 <img src="https://www.keepiko.com/images/where-guy.svg" alt="" class="illustration mobile-where-guy">
                 <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="" class="illustration mobile-iphone">
             </div>
