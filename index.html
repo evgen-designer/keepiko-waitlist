@@ -148,18 +148,24 @@
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; z-index: 2; }
 
-            .mobile-where-guy-circle {
+            /* NEW MASKING IMPLEMENTATION */
+            .mobile-where-guy-mask {
                 width: 220px;
                 height: 220px;
                 background-color: #FF8FAB;
                 border-radius: 50%;
-                background-image: url('https://www.keepiko.com/images/where-guy.svg');
-                background-size: 85%;
-                background-position: center;
-                background-repeat: no-repeat;
-                right: 125px; /* CHANGED: Was 95px, moved 30px left */
-                bottom: 150px; /* CHANGED: Was 120px, moved 30px up */
+                position: absolute;
+                right: 155px; /* CHANGED: Was 125px, moved 30px left */
+                bottom: 180px; /* CHANGED: Was 150px, moved 30px up */
                 z-index: 1;
+                overflow: hidden; /* This is the magic property that clips the image */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-where-guy-mask img {
+                width: 110%; /* Make image slightly larger than the circle to ensure edges are clipped */
+                height: auto;
             }
             
             .mobile-nav {
@@ -212,7 +218,10 @@
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
             <div class="mobile-only mobile-illustration-container">
-                <div class="illustration mobile-where-guy-circle"></div>
+                <!-- Replaced the old div with a proper mask container holding the image -->
+                <div class="illustration mobile-where-guy-mask">
+                    <img src="https://www.keepiko.com/images/where-guy.svg" alt="">
+                </div>
                 <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="" class="illustration mobile-iphone">
             </div>
         </main>
