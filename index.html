@@ -109,7 +109,7 @@
             border: 0; height: 1px; background-color: rgba(0, 0, 0, 0.1);
             margin-bottom: 20px; max-width: 440px; margin-left: 0;
         }
-        .mobile-only { display: none; }
+        .mobile-only, .header-text-mobile { display: none; } /* Hide mobile elements by default */
 
         /* --- DESKTOP SPECIFIC SPACING --- */
         @media (min-width: 1025px) {
@@ -127,6 +127,8 @@
                 margin-top: 25px;
             }
             .logo-area span { color: #111; }
+            .header-text-desktop { display: none; } /* NEW: Hide desktop text */
+            .header-text-mobile { display: inline; } /* NEW: Show mobile text */
             nav.desktop-nav { display: none; }
 
             main {
@@ -184,7 +186,7 @@
             
             .social-proof { 
                 font-size: 14px;
-                gap: 6px; /* CHANGED: Was 12px */
+                gap: 6px;
             }
             .avatar {
                 width: 18px;
@@ -203,7 +205,9 @@
         <header>
             <div class="logo-area">
                 <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
-                <span>Keepiko - Simple home inventory app</span>
+                <!-- Spans for showing/hiding text -->
+                <span class="header-text-desktop">Keepiko - Simple home inventory app</span>
+                <span class="header-text-mobile">Keepiko - Simple home inventory</span>
             </div>
             <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
@@ -216,7 +220,8 @@
             <div class="hero-text">
                 <h1>Find every item at home in secs</h1>
                 <div class="cta-group">
-                    <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" class="cta-button" onclick="gtag('event', 'join_waitlist_click');">Join the waitlist</a>
+                    <!-- Changed Button Text -->
+                    <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" class="cta-button" onclick="gtag('event', 'join_waitlist_click');"> Join the waitlist</a>
                     <div class="social-proof">
                         <div class="avatars">
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
