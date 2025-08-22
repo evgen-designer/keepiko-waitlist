@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keepiko - Simple home inventory app (Test)</title>
-    <link rel="icon" href="https://evgen-designer.github.io/images/mini-logo.svg">
+    <link rel="icon" href="https://www.keepiko.com/images/mini-logo.svg">
     <style>
         /* --- Base & Fonts --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,10 +25,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 25px; /* CHANGED: Added padding */
+            padding: 15px 25px;
             margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.2); /* NEW: Semi-transparent background */
-            border-radius: 16px; /* NEW: Rounded corners */
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
         }
         .logo-area {
             display: flex;
@@ -67,7 +67,7 @@
         .hero-text h1 {
             font-size: 80px;
             font-weight: 700;
-            line-height: 85%; /* CHANGED: Set interline spacing */
+            line-height: 85%;
             margin-bottom: 40px;
         }
         .cta-group {
@@ -79,7 +79,7 @@
             background-color: #2563EB;
             color: white;
             padding: 16px 32px;
-            border-radius: 16px;
+            border-radius: 9999px; /* CHANGED: For capsule shape */
             font-size: 18px;
             font-weight: 600;
             text-decoration: none;
@@ -113,7 +113,7 @@
             align-items: center;
         }
         .iphone-illustration, .dialog-bubble, .where-guy {
-            position: absolute; /* Changed to absolute for easier layering */
+            position: absolute;
         }
         .iphone-illustration {
             max-width: 450px;
@@ -140,7 +140,7 @@
             color: #000;
             font-weight: 400;
         }
-        .footer-divider { /* NEW: Style for the divider */
+        .footer-divider {
             border: 0;
             height: 1px;
             background-color: rgba(0, 0, 0, 0.1);
@@ -149,9 +149,8 @@
 
         /* --- Responsive Design --- */
         @media (min-width: 1024px) {
-             .page-wrapper {
-                padding-left: 120px; /* NEW: 120px spacing from left */
-                padding-right: 40px;
+             main, footer {
+                padding-left: 80px; /* 40px from wrapper + 80px here = 120px */
             }
         }
         @media (max-width: 1024px) {
@@ -172,15 +171,14 @@
     </style>
     <!-- Your Analytics Scripts in Head -->
     <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
-    <script async src="https://www.goog-letagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
 <body>
     <div class="page-wrapper">
         <header>
             <div class="logo-area">
-                <!-- IMPORTANT: Using FULL URL for the image to ensure it loads -->
-                <img src="https://evgen-designer.github.io/images/mini-logo.svg" alt="Keepiko Logo">
+                <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
                 <span>Keepiko - Simple home inventory app</span>
             </div>
             <nav>
@@ -207,15 +205,14 @@
             </div>
 
             <div class="hero-images">
-                <!-- IMPORTANT: Using FULL URLs for all images -->
-                <img src="https://evgen-designer.github.io/images/dialog-bubble.svg" alt="Dialog bubble saying 'Where is my lucky scarf'" class="dialog-bubble">
-                <img src="https://evgen-designer.github.io/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration">
-                <img src="https://evgen-designer.github.io/images/where-guy.svg" alt="Confused person looking for an item" class="where-guy">
+                <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble saying 'Where is my lucky scarf'" class="dialog-bubble">
+                <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration">
+                <img src="https://www.keepiko.com/images/where-guy.svg" alt="Confused person looking for an item" class="where-guy">
             </div>
         </main>
 
         <footer>
-            <hr class="footer-divider"> <!-- NEW: Divider line -->
+            <hr class="footer-divider">
             <p>© 2025 Keepiko. All rights reserved.</p>
         </footer>
     </div>
