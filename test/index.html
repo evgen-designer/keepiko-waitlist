@@ -3,69 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keepiko - Get Early Access</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Keepiko - Simple home inventory app (Test)</title>
+    <link rel="icon" href="https://evgen-designer.github.io/images/mini-logo.svg">
+    <style>
+        /* --- Base & Fonts --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FF8FAB;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .page-wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px; /* CHANGED: Added padding */
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.2); /* NEW: Semi-transparent background */
+            border-radius: 16px; /* NEW: Rounded corners */
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #111;
+        }
+        .logo-area img { height: 32px; }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #000; }
+
+        /* --- Main Hero Section --- */
+        main {
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            gap: 40px;
+            min-height: calc(100vh - 170px);
+        }
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
+        }
+        .hero-text h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 85%; /* CHANGED: Set interline spacing */
+            margin-bottom: 40px;
+        }
+        .cta-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .cta-button {
+            background-color: #2563EB;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button:hover { transform: translateY(-2px); }
+        .social-proof {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #000;
+        }
+        .avatars { display: flex; }
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid #FF8FAB;
+            margin-left: -12px;
+            object-fit: cover;
+        }
+        
+        /* --- Image Illustrations Section --- */
+        .hero-images {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .iphone-illustration, .dialog-bubble, .where-guy {
+            position: absolute; /* Changed to absolute for easier layering */
+        }
+        .iphone-illustration {
+            max-width: 450px;
+            z-index: 2;
+        }
+        .dialog-bubble {
+            top: -50px;
+            left: 50%;
+            transform: translateX(-60%);
+            width: 280px;
+            z-index: 3;
+        }
+        .where-guy {
+            bottom: -80px;
+            left: -100px;
+            width: 250px;
+            z-index: 1;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 40px 0 20px 0;
+            font-size: 14px;
+            color: #000;
+            font-weight: 400;
+        }
+        .footer-divider { /* NEW: Style for the divider */
+            border: 0;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (min-width: 1024px) {
+             .page-wrapper {
+                padding-left: 120px; /* NEW: 120px spacing from left */
+                padding-right: 40px;
+            }
+        }
+        @media (max-width: 1024px) {
+            main { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 60px; }
+            .cta-group { justify-content: center; flex-direction: column; }
+            .hero-images { margin-top: 60px; min-height: 400px; width: 100%;}
+            .iphone-illustration { max-width: 350px; }
+            .dialog-bubble { top: -40px; width: 220px; }
+            .where-guy { left: 0; right: 0; margin: auto; bottom: 0; width: 200px; }
+        }
+        @media (max-width: 768px) {
+            .page-wrapper { padding: 0 20px; }
+            header { flex-direction: column; gap: 15px; }
+            .hero-text h1 { font-size: 48px; }
+            footer { text-align: center; }
+        }
+    </style>
+    <!-- Your Analytics Scripts in Head -->
+    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
+    <script async src="https://www.goog-letagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
 <body>
-    <div class="container">
-        <div class="content-wrapper">
-            <!-- Left side - Illustration -->
-            <div class="illustration-section">
-                <div class="book-container">
-                    <div class="book-card">
-                        <div class="book-inner">
-                            <img
-                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Keepica-jRFadChFRKmeb37xOdf2vau7nJeAya.svg"
-                                alt="Keepica illustration"
-                                class="book-image"
-                            />
-                        </div>
-                    </div>
-                </div>
+    <div class="page-wrapper">
+        <header>
+            <div class="logo-area">
+                <!-- IMPORTANT: Using FULL URL for the image to ensure it loads -->
+                <img src="https://evgen-designer.github.io/images/mini-logo.svg" alt="Keepiko Logo">
+                <span>Keepiko - Simple home inventory app</span>
             </div>
+            <nav>
+                <a href="/support">Contact us</a>
+                <a href="/terms">Terms</a>
+                <a href="/policy">Privacy</a>
+            </nav>
+        </header>
 
-            <!-- Right side - Content -->
-            <div class="text-section">
-                <div class="text-content">
-                    <h1 class="main-title">Get early access to Keepiko</h1>
-                    <p class="description">
-                        The easiest way to organize home storage and inventory with your phone.
-                    </p>
-                </div>
-
-                <div class="cta-section">
-                    <a
-                        href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-button"
-                    >
-                        Join the waitlist
-                    </a>
-
+        <main>
+            <div class="hero-text">
+                <h1>Find every item at home in secs</h1>
+                <div class="cta-group">
+                    <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" class="cta-button" onclick="gtag('event', 'join_waitlist_click');">Join the waitlist</a>
                     <div class="social-proof">
-                        <span class="social-text">32+ others just joined</span>
-                        <div class="avatar-group">
-                            <img
-                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png"
-                                alt="User avatar"
-                                class="avatar"
-                            />
-                            <img
-                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png"
-                                alt="User avatar"
-                                class="avatar"
-                            />
-                            <img
-                                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png"
-                                alt="User avatar"
-                                class="avatar"
-                            />
+                        <div class="avatars">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                         </div>
+                        <span>32+ others just joined</span>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="hero-images">
+                <!-- IMPORTANT: Using FULL URLs for all images -->
+                <img src="https://evgen-designer.github.io/images/dialog-bubble.svg" alt="Dialog bubble saying 'Where is my lucky scarf'" class="dialog-bubble">
+                <img src="https://evgen-designer.github.io/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration">
+                <img src="https://evgen-designer.github.io/images/where-guy.svg" alt="Confused person looking for an item" class="where-guy">
+            </div>
+        </main>
+
+        <footer>
+            <hr class="footer-divider"> <!-- NEW: Divider line -->
+            <p>© 2025 Keepiko. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
