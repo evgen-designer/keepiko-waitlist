@@ -13,7 +13,7 @@
             background-color: #FF8FAB;
             color: #fff;
             overflow-x: hidden;
-            position: relative; /* Context for absolute positioning */
+            position: relative;
         }
         .page-wrapper {
             max-width: 1440px;
@@ -114,31 +114,29 @@
             pointer-events: none;
         }
         .iphone-illustration {
-            width: 405px; /* CHANGED: Was 425px */
+            width: 385px; /* CHANGED: Was 405px */
             right: 0;
             bottom: 0;
             z-index: 2;
         }
         .dialog-bubble {
             width: 280px;
-            right: 200px; /* Adjusted position */
-            bottom: 330px; /* Adjusted position */
+            right: 200px;
+            bottom: 330px;
             z-index: 3;
         }
-        /* NEW: Style for the text on the bubble */
         .dialog-text {
             color: #111;
             font-weight: 500;
             font-size: 18px;
-            width: 200px;
-            text-align: center;
-            right: 240px; /* Positioned relative to bubble */
-            bottom: 365px; /* Positioned relative to bubble */
-            z-index: 4; /* On top of the bubble */
+            right: 230px;
+            bottom: 365px;
+            z-index: 4;
+            white-space: nowrap; /* CHANGED: Keeps text on one line */
         }
         .where-guy {
-            width: 242px; /* CHANGED: Was 255px */
-            left: 480px; /* CHANGED: Was 280px, moved far right */
+            width: 230px; /* CHANGED: Was 242px */
+            left: 550px; /* CHANGED: Was 480px, moved far right */
             bottom: 0;
             z-index: 1;
         }
@@ -155,6 +153,8 @@
             height: 1px;
             background-color: rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            max-width: 530px; /* CHANGED: Stops the line before the 'where-guy' illustration */
+            margin-left: 0; /* Ensures it stays left-aligned */
         }
 
         /* --- Responsive Design --- */
@@ -168,6 +168,7 @@
             .hero-text { flex-basis: auto; }
             .hero-images, .illustration { display: none; }
             .cta-group { justify-content: center; }
+            .footer-divider { max-width: 100%; } /* Let divider be full width on smaller screens */
         }
         @media (max-width: 768px) {
             .page-wrapper { padding: 0 20px; }
@@ -203,7 +204,8 @@
                     <div class="social-proof">
                         <div class="avatars">
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
-                            <img src="https://hebbkx1anhila5yf.public.blob.verbcel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
+                            <!-- FIXED BROKEN AVATAR LINK -->
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
                             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
                         </div>
                         <span>32+ others just joined</span>
@@ -211,7 +213,7 @@
                 </div>
             </div>
             <div class="hero-images">
-                <!-- This is just a spacer now -->
+                <!-- Spacer -->
             </div>
         </main>
 
@@ -221,7 +223,6 @@
         </footer>
     </div>
 
-    <!-- Illustrations and Text Placed Here for Screen-Based Positioning -->
     <p class="illustration dialog-text">Where is my lucky scarf 😩</p>
     <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="Dialog bubble" class="illustration dialog-bubble">
     <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="illustration iphone-illustration">
