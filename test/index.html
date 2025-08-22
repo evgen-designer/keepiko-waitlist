@@ -131,9 +131,10 @@
 
             main {
                 flex-direction: column; text-align: center;
-                padding-top: 40px; /* CHANGED: Removed bottom padding */
+                padding-top: 40px;
+                padding-bottom: 0; /* CHANGED: Remove bottom space */
                 min-height: auto;
-                gap: 20px; /* CHANGED: Reduced space */
+                gap: 20px;
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
@@ -164,7 +165,7 @@
         }
     </style>
     <!-- Your Analytics Scripts in Head -->
-    <script type="text-javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
+    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
@@ -199,18 +200,19 @@
             </div>
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
+            <!-- These two mobile sections are now inside main -->
             <div class="mobile-only mobile-illustration-container">
                 <img src="https://www.keepiko.com/images/where-guy.svg" alt="" class="illustration mobile-where-guy">
                 <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="" class="illustration mobile-iphone">
             </div>
+            
+            <nav class="mobile-only mobile-nav">
+                <a href="/support">Contact us</a>
+                <a href="/terms">Terms</a>
+                <a href="/policy">Privacy</a>
+            </nav>
         </main>
         
-        <nav class="mobile-only mobile-nav">
-            <a href="/support">Contact us</a>
-            <a href="/terms">Terms</a>
-            <a href="/policy">Privacy</a>
-        </nav>
-
         <footer>
             <hr class="footer-divider">
             <p>© 2025 Keepiko. All rights reserved.</p>
