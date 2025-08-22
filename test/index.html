@@ -109,7 +109,7 @@
             border: 0; height: 1px; background-color: rgba(0, 0, 0, 0.1);
             margin-bottom: 20px; max-width: 440px; margin-left: 0;
         }
-        .mobile-only { display: none; } /* Hide mobile elements by default */
+        .mobile-only { display: none; }
 
         /* --- DESKTOP SPECIFIC SPACING --- */
         @media (min-width: 1025px) {
@@ -119,59 +119,51 @@
         /* --- MOBILE REDESIGN (Tablet and below) --- */
         @media (max-width: 1024px) {
             .page-wrapper { padding: 0 20px; }
-            header { /* Simplify header */
-                background: none;
+            header {
+                background-color: rgba(255, 255, 255, 0.2); /* CHANGED: Added background */
+                border-radius: 16px; /* CHANGED: Added corners */
+                padding: 15px 25px; /* CHANGED: Added padding */
                 justify-content: center;
                 margin-top: 40px;
-                padding: 0;
             }
-            nav.desktop-nav { display: none; } /* Hide desktop nav */
-            .logo-area { color: #fff; } /* Make logo text white on mobile */
+            .logo-area span { color: #111; } /* CHANGED: Made text black */
+            nav.desktop-nav { display: none; }
 
             main {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 0;
-                min-height: auto;
+                flex-direction: column; text-align: center;
+                padding: 40px 0; min-height: auto;
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
             .cta-group { justify-content: center; flex-direction: column; }
-            .hero-images { display: none; } /* Hide the desktop spacer */
+            .hero-images, .illustration, .illustration-group { display: none; }
             
-            .illustration, .illustration-group { display: none; } /* Hide all desktop illustrations */
-            
-            .mobile-only { display: block; } /* Show mobile-only elements */
+            .mobile-only { display: block; }
             
             .mobile-illustration-container {
-                position: relative;
-                width: 100%;
-                height: 380px; /* Set a fixed height for the container */
-                margin-top: 40px;
+                position: relative; width: 100%;
+                height: 380px; margin-top: 40px;
             }
-            .mobile-illustration-container .illustration {
-                display: block !important; /* Ensure they are visible */
-                position: absolute;
-            }
+            .mobile-illustration-container .illustration { display: block !important; position: absolute; }
             .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
-            .mobile-where-guy { width: 200px; right: 150px; bottom: 0; }
+            .mobile-where-guy { width: 200px; right: 210px; bottom: 0; } /* CHANGED: Was 150px, moved 60px left */
             .mobile-dialog-bubble { width: 200px; right: 120px; bottom: 250px; }
             .mobile-dialog-text {
-                right: 135px; bottom: 275px; color: #111;
+                right: 145px; bottom: 280px; color: #111; /* CHANGED: Positioned text */
                 font-size: 14px; white-space: nowrap;
             }
             
             .mobile-nav {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                padding: 20px 0;
+                display: flex; justify-content: center; gap: 30px;
+                padding: 15px 25px; margin: 20px 0; /* CHANGED: Added padding and margin */
+                background-color: rgba(255, 255, 255, 0.2); /* CHANGED: Added background */
+                border-radius: 16px; /* CHANGED: Added corners */
             }
-            .mobile-nav a { color: #fff; font-weight: 500; text-decoration: none; }
+            .mobile-nav a { color: #111; font-weight: 500; text-decoration: none; } /* CHANGED: Made text black */
             
             footer { padding: 20px 0; text-align: center; }
             .footer-divider { max-width: 100%; margin: 0 auto 20px auto; }
-            footer p { color: #fff; }
+            footer p { color: #000; } /* CHANGED: Made text black */
         }
     </style>
     <!-- Your Analytics Scripts in Head -->
@@ -186,7 +178,6 @@
                 <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
                 <span>Keepiko - Simple home inventory app</span>
             </div>
-            <!-- This nav is for DESKTOP ONLY -->
             <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
@@ -211,7 +202,6 @@
             </div>
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
-            <!-- This illustration container is FOR MOBILE ONLY -->
             <div class="mobile-only mobile-illustration-container">
                 <p class="illustration mobile-dialog-text">Where is my lucky scarf 😩</p>
                 <img src="https://www.keepiko.com/images/dialog-bubble.svg" alt="" class="illustration mobile-dialog-bubble">
@@ -220,7 +210,6 @@
             </div>
         </main>
         
-        <!-- This nav is FOR MOBILE ONLY -->
         <nav class="mobile-only mobile-nav">
             <a href="/support">Contact us</a>
             <a href="/terms">Terms</a>
