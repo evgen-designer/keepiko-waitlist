@@ -131,10 +131,8 @@
 
             main {
                 flex-direction: column; text-align: center;
-                padding-top: 40px;
-                padding-bottom: 0; /* CHANGED: Remove bottom space */
-                min-height: auto;
-                gap: 20px;
+                padding-top: 40px; padding-bottom: 0;
+                min-height: auto; gap: 20px;
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
@@ -148,8 +146,22 @@
                 height: 380px;
             }
             .mobile-illustration-container .illustration { display: block !important; position: absolute; }
-            .mobile-iphone { width: 280px; right: -20px; bottom: 0; }
-            .mobile-where-guy { width: 190px; right: 210px; bottom: 0; }
+            .mobile-iphone { width: 280px; right: -20px; bottom: 0; z-index: 2; }
+
+            /* NEW STYLE FOR MASKED ILLUSTRATION */
+            .mobile-where-guy-circle {
+                width: 220px;
+                height: 220px;
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                background-image: url('https://www.keepiko.com/images/where-guy.svg');
+                background-size: 85%;
+                background-position: center;
+                background-repeat: no-repeat;
+                right: 50px;
+                bottom: 120px;
+                z-index: 1;
+            }
             
             .mobile-nav {
                 display: flex; justify-content: center; gap: 30px;
@@ -200,19 +212,19 @@
             </div>
             <div class="hero-images"><!-- Spacer for desktop --></div>
             
-            <!-- These two mobile sections are now inside main -->
             <div class="mobile-only mobile-illustration-container">
-                <img src="https://www.keepiko.com/images/where-guy.svg" alt="" class="illustration mobile-where-guy">
+                <!-- Replaced the img tag with a styled div -->
+                <div class="illustration mobile-where-guy-circle"></div>
                 <img src="https://www.keepiko.com/images/iphone-illustration.svg" alt="" class="illustration mobile-iphone">
             </div>
-            
-            <nav class="mobile-only mobile-nav">
-                <a href="/support">Contact us</a>
-                <a href="/terms">Terms</a>
-                <a href="/policy">Privacy</a>
-            </nav>
         </main>
         
+        <nav class="mobile-only mobile-nav">
+            <a href="/support">Contact us</a>
+            <a href="/terms">Terms</a>
+            <a href="/policy">Privacy</a>
+        </nav>
+
         <footer>
             <hr class="footer-divider">
             <p>© 2025 Keepiko. All rights reserved.</p>
