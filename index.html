@@ -3,280 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keepiko - Get Early Access</title>
-    <link rel="icon" type="image/svg+xml" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Keepica-jRFadChFRKmeb37xOdf2vau7nJeAya.svg">
+    <title>Keepiko - Simple home inventory app</title>
+    <link rel="icon" href="https://evgen-designer.github.io/images/mini-logo.svg">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* --- Base & Fonts --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f9fafb;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FF8FAB; /* Main pink background */
+            color: #fff;
             overflow-x: hidden;
         }
-        .container {
-            min-height: 100vh;
+        .page-wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo-area {
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #111; /* Dark text for header */
         }
-        .main-content {
-            width: 100%;
+        .logo-area img { height: 32px; }
+        nav {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
+            gap: 30px;
         }
-        .illustration {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            flex-shrink: 0;
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
         }
-        .book-3d {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f9a8d4 100%);
-            border-radius: 24px;
-            transform: rotate(12deg);
-            transition: transform 0.3s ease;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-        }
-        .book-3d:hover {
-            transform: rotate(6deg);
-        }
-        .book-inner {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            background: white;
-            border-radius: 12px;
+        nav a:hover { color: #000; }
+
+        /* --- Main Hero Section --- */
+        main {
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            padding: 60px 0;
+            gap: 40px;
+            min-height: calc(100vh - 150px); /* Adjust height to fit screen */
         }
-        .content {
-            text-align: center;
-            width: 100%;
+        .hero-text {
+            flex: 1;
+            max-width: 500px;
         }
-        .title {
-            font-size: 42px;
-            font-weight: 800;
-            color: #111827;
-            margin-bottom: 16px;
+        .hero-text h1 {
+            font-size: 80px;
+            font-weight: 700;
             line-height: 1.1;
+            margin-bottom: 40px;
         }
-        .subtitle {
-            font-size: 18px;
-            color: #6b7280;
-            margin-bottom: 32px;
-            line-height: 1.5;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
+        .cta-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         .cta-button {
-            display: inline-block;
-            background-color: #3b82f6;
+            background-color: #2563EB;
             color: white;
-            padding: 16px 36px;
-            border-radius: 50px;
+            padding: 16px 32px;
+            border-radius: 16px;
             font-size: 18px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        .cta-button:hover {
-            background-color: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-        }
+        .cta-button:hover { transform: translateY(-2px); }
         .social-proof {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            font-size: 14px;
-            color: #9ca3af;
+            gap: 12px;
+            font-size: 16px;
+            color: #000;
         }
-        .avatars {
-            display: flex;
-        }
+        .avatars { display: flex; }
         .avatar {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            border: 2px solid #f9fafb;
+            border: 2px solid #FF8FAB;
             margin-left: -12px;
             object-fit: cover;
         }
-        .footer-content {
-            margin-top: 40px;
-            width: 100%;
-        }
-        .footer-divider {
-            border: 0;
-            border-top: 1px solid #e5e7eb;
-            margin-bottom: 20px;
-        }
-        .footer-text {
-            font-size: 14px;
-            color: #9ca3af;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        /* NEW STYLE FOR THE CONTACT BUTTON */
-        .footer-contact-button {
-            display: inline-block;
-            padding: 5px 15px;
-            color: #6b7280;
-            border: 1px solid #d1d5db;
-            border-radius: 9999px;
-            text-decoration: none;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        .footer-contact-button:hover {
-            background-color: #f3f4f6;
-            color: #111827;
-        }
-
-        @media (min-width: 1024px) {
-            .main-content {
-                max-width: 1100px;
-                flex-direction: row;
-                justify-content: center;
-                margin-left: auto;
-                margin-right: auto;
-                gap: 70px;
-            }
-            .content {
-                text-align: left;
-                width: auto;
-                max-width: 450px;
-            }
-            .subtitle {
-                margin-left: 0;
-                margin-right: 0;
-            }
-            .social-proof {
-                justify-content: flex-start;
-            }
-            .illustration {
-                width: 330px;
-                height: 330px;
-            }
-            .title {
-                font-size: 50px;
-            }
-            /* Align footer items horizontally on desktop */
-            .footer-text {
-                flex-direction: row;
-                justify-content: flex-start;
-                gap: 15px;
-            }
-        }
         
-        @media (max-width: 480px) {
-            .container {
-                padding: 50px 20px;
-            }
-            .illustration {
-                width: 240px;
-                height: 240px;
-            }
-            .title {
-                font-size: 34px;
-            }
-            .subtitle {
-                font-size: 17px;
-            }
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 17px;
-            }
+        /* --- Image Illustrations Section --- */
+        .hero-images {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .iphone-illustration {
+            max-width: 450px;
+            position: relative;
+            z-index: 2;
+        }
+        .dialog-bubble {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-60%);
+            width: 280px;
+            z-index: 3;
+        }
+        .where-guy {
+            position: absolute;
+            bottom: -80px;
+            left: -100px;
+            width: 250px;
+            z-index: 1;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* --- Footer --- */
+        footer {
+            padding: 20px 0;
+            font-size: 14px;
+            color: #000;
+            font-weight: 400;
         }
-        .content > * {
-            animation: fadeInUp 0.6s ease forwards;
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            main { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 60px; }
+            .cta-group { justify-content: center; flex-direction: column; }
+            .hero-images { margin-top: 60px; }
+            .iphone-illustration { max-width: 350px; }
+            .dialog-bubble { top: -40px; width: 220px; }
+            .where-guy { left: -50px; width: 200px; }
         }
-        .content > *:nth-child(2) { animation-delay: 0.1s; }
-        .content > *:nth-child(3) { animation-delay: 0.2s; }
-        .content > *:nth-child(4) { animation-delay: 0.3s; }
-        .content > *:nth-child(5) { animation-delay: 0.4s; }
+        @media (max-width: 768px) {
+            .page-wrapper { padding: 0 20px; }
+            header { flex-direction: column; gap: 15px; }
+            .hero-text h1 { font-size: 48px; }
+            footer { text-align: center; }
+        }
+
     </style>
-    
+    <!-- Your Analytics Scripts in Head -->
     <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
 <body>
-    <div class="container">
-        <div class="main-content">
-            <div class="illustration">
-                <div class="book-3d">
-                    <div class="book-inner">
-                         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Keepica-jRFadChFRKmeb37xOdf2vau7nJeAya.svg" alt="Keepica illustration" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="page-wrapper">
+        <header>
+            <div class="logo-area">
+                <img src="https://evgen-designer.github.io/images/mini-logo.svg" alt="Keepiko Logo"> <!-- REPLACE -->
+                <span>Keepiko - Simple home inventory app</span>
+            </div>
+            <nav>
+                <a href="/support">Contact us</a>
+                <a href="/terms">Terms</a>
+                <a href="/policy">Privacy</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="hero-text">
+                <h1>Find every item at home in secs</h1>
+                <div class="cta-group">
+                    <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" class="cta-button" onclick="gtag('event', 'join_waitlist_click');">Join the waitlist</a>
+                    <div class="social-proof">
+                        <div class="avatars">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
+                        </div>
+                        <span>32+ others just joined</span>
                     </div>
                 </div>
             </div>
 
-            <div class="content">
-                <h1 class="title">Get early access to Keepiko</h1>
-                <p class="subtitle">
-                    The easiest way to organize home storage and inventory with your phone.
-                </p>
-                <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="cta-button"
-                   onclick="gtag('event', 'join_waitlist_click', {'event_category': 'conversion', 'event_label': 'Waitlist CTA'});">
-                    Join the waitlist
-                </a>
-                <div class="social-proof">
-                    <span>32+ others just joined</span>
-                    <div class="avatars">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
-                    </div>
-                </div>
-
-                <!-- MODIFIED FOOTER CONTENT STARTS HERE -->
-                <div class="footer-content">
-                    <hr class="footer-divider">
-                    <div class="footer-text">
-                        <a href="/support" class="footer-contact-button">Contact us</a>
-                        <span>&copy; 2025 Keepiko. All rights reserved.</span>
-                    </div>
-                </div>
-                <!-- MODIFIED FOOTER CONTENT ENDS HERE -->
-
+            <div class="hero-images">
+                <img src="https://evgen-designer.github.io/images/dialog-bubble.svg" alt="Dialog bubble" class="dialog-bubble"> <!-- REPLACE -->
+                <img src="https://evgen-designer.github.io/images/iphone-illustration.svg" alt="iPhone showing Keepiko app" class="iphone-illustration"> <!-- REPLACE -->
+                <img src="https://evgen-designer.github.io/images/where-guy.svg" alt="Confused person" class="where-guy"> <!-- REPLACE -->
             </div>
-        </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Keepiko. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
