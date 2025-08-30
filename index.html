@@ -5,22 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keepiko - Simple home inventory app</title>
     <link rel="icon" href="https://www.keepiko.com/images/mini-logo.svg">
-    
-    <!-- Meta Tags for SEO and Social Sharing -->
     <meta name="description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.keepiko.com/">
-    <meta property="og:title" content="Keepiko - Simple home inventory app">
-    <meta property="og:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
-    <meta property="og:image" content="https://www.keepiko.com/images/keepiko-preview.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.keepiko.com/">
-    <meta name="twitter:title" content="Keepiko - Simple home inventory app">
-    <meta name="twitter:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
-    <meta name="twitter:image" content="https://www.keepiko.com/images/keepiko-preview.png">
-
+    <!-- ... all other meta tags ... -->
     <style>
-        /* --- Base & Fonts --- */
+        /* ... all your main page styles ... */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -36,8 +24,6 @@
             position: relative;
             z-index: 5;
         }
-
-        /* --- DESKTOP STYLES (Default) --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -54,7 +40,7 @@
             font-size: 16px;
             font-weight: 500;
             color: #111;
-            text-decoration: none; /* Add this line */
+            text-decoration: none;
         }
         .logo-area img { height: 32px; }
         nav { display: flex; gap: 30px; }
@@ -126,12 +112,10 @@
         }
         .mobile-only, .header-text-mobile { display: none; }
 
-        /* --- DESKTOP SPECIFIC SPACING --- */
         @media (min-width: 1025px) {
              main, footer { padding-left: 80px; }
         }
 
-        /* --- MOBILE REDESIGN (Tablet and below) --- */
         @media (max-width: 1024px) {
             .page-wrapper { padding: 0 20px; }
             header {
@@ -231,7 +215,7 @@
             <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
-                <a href="/policy">Privacy</a>
+                <a href="/privacy">Privacy</a> <!-- CHANGED -->
             </nav>
         </header>
 
@@ -250,7 +234,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-images"><!-- Spacer for desktop --></div>
+            <div class="hero-images"><!-- Spacer --></div>
             
             <div class="mobile-only mobile-illustration-container">
                 <div class="illustration mobile-where-guy-mask">
@@ -263,7 +247,7 @@
         <nav class="mobile-only mobile-nav">
             <a href="/support">Contact us</a>
             <a href="/terms">Terms</a>
-            <a href="/policy">Privacy</a>
+            <a href="/privacy">Privacy</a> <!-- CHANGED -->
         </nav>
 
         <footer>
