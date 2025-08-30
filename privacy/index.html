@@ -14,19 +14,24 @@
         .logo-area img { height: 32px; }
         nav { display: flex; gap: 30px; }
         nav a { text-decoration: none; color: #111; font-weight: 500; font-size: 16px; }
-        .content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: rgba(255, 255, 255, 0.75); border-radius: 16px; }
+        .content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: #fff; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { margin-bottom: 30px; }
         h2 { margin-top: 40px; }
         p, ul { margin-bottom: 20px; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
-        footer { padding: 40px 0 20px 0; font-size: 14px; color: #000; font-weight: 400; text-align: center; }
-        .header-text-mobile { display: none; }
+        footer { padding: 20px 0; font-size: 14px; color: #000; font-weight: 400; text-align: center; }
+        .mobile-only, .header-text-mobile { display: none; }
         @media (max-width: 1024px) {
             .page-wrapper { padding: 0 20px; }
-            header { flex-direction: column; gap: 15px; }
+            header { justify-content: center; margin-top: 25px; }
             .header-text-desktop { display: none; }
             .header-text-mobile { display: inline; }
+            nav.desktop-nav { display: none; }
+            .mobile-only { display: block; }
+            .mobile-nav { display: flex; justify-content: center; gap: 30px; padding: 15px 25px; margin: 20px 0; background-color: rgba(255, 255, 255, 0.2); border-radius: 16px; }
+            .mobile-nav a { font-size: 14px; }
+            footer p { color: #fff; }
         }
     </style>
     <!-- Analytics -->
@@ -42,7 +47,7 @@
                 <span class="header-text-desktop">Keepiko - Simple home inventory app</span>
                 <span class="header-text-mobile">Keepiko - Simple home inventory</span>
             </a>
-            <nav>
+            <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
                 <a href="/privacy">Privacy</a>
@@ -71,6 +76,11 @@
             <p>If you have any questions about your privacy, please don't hesitate to email me.</p>
             <p><em>Last updated: August 16, 2025</em></p>
         </div>
+        <nav class="mobile-only mobile-nav">
+            <a href="/support">Contact us</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+        </nav>
         <footer>
             <p>© 2025 Keepiko. All rights reserved.</p>
         </footer>
