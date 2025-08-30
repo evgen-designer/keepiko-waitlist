@@ -6,23 +6,19 @@
     <title>Keepiko - Simple home inventory app</title>
     <link rel="icon" href="https://www.keepiko.com/images/mini-logo.svg">
     
-    <!-- Standard SEO Meta Tags -->
+    <!-- Meta Tags for SEO and Social Sharing -->
     <meta name="description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
-
-    <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.keepiko.com/">
     <meta property="og:title" content="Keepiko - Simple home inventory app">
     <meta property="og:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
     <meta property="og:image" content="https://www.keepiko.com/images/keepiko-preview.png">
-
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.keepiko.com/">
     <meta name="twitter:title" content="Keepiko - Simple home inventory app">
     <meta name="twitter:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
     <meta name="twitter:image" content="https://www.keepiko.com/images/keepiko-preview.png">
-    
+
     <style>
         /* --- Base & Fonts --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,6 +54,7 @@
             font-size: 16px;
             font-weight: 500;
             color: #111;
+            text-decoration: none; /* Add this line */
         }
         .logo-area img { height: 32px; }
         nav { display: flex; gap: 30px; }
@@ -187,7 +184,7 @@
                 height: auto;
                 position: relative;
                 top: 60px;
-                left: 32px; /* CHANGED: Was 12px */
+                left: 32px;
             }
             
             .mobile-nav {
@@ -226,11 +223,11 @@
 <body>
     <div class="page-wrapper">
         <header>
-            <div class="logo-area">
+            <a href="/" class="logo-area">
                 <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
                 <span class="header-text-desktop">Keepiko - Simple home inventory app</span>
                 <span class="header-text-mobile">Keepiko - Simple home inventory</span>
-            </div>
+            </a>
             <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
@@ -242,7 +239,6 @@
             <div class="hero-text">
                 <h1>Find every item at home in secs</h1>
                 <div class="cta-group">
-                    <!-- CHANGED BUTTON TEXT -->
                     <a href="https://airtable.com/appObsABZVF3p9pPU/pagqZ0WsvoIrsyX0d/form" class="cta-button" onclick="gtag('event', 'join_waitlist_click');"> Join the waitlist</a>
                     <div class="social-proof">
                         <div class="avatars">
