@@ -7,16 +7,16 @@
     <link rel="icon" href="https://www.keepiko.com/images/mini-logo.svg">
     
     <!-- Meta Tags for SEO and Social Sharing -->
-    <meta name="description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
+    <meta name="description" content="Find every item at home in seconds. Download Keepiko, the simple home inventory app.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.keepiko.com/">
     <meta property="og:title" content="Keepiko - Simple home inventory app">
-    <meta property="og:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
+    <meta property="og:description" content="Find every item at home in seconds. Download Keepiko, the simple home inventory app.">
     <meta property="og:image" content="https://www.keepiko.com/images/keepiko-preview.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.keepiko.com/">
     <meta name="twitter:title" content="Keepiko - Simple home inventory app">
-    <meta name="twitter:description" content="Find every item at home in seconds. Join the waitlist for Keepiko, the simple home inventory app.">
+    <meta name="twitter:description" content="Find every item at home in seconds. Download Keepiko, the simple home inventory app.">
     <meta name="twitter:image" content="https://www.keepiko.com/images/keepiko-preview.png">
 
     <style>
@@ -79,25 +79,41 @@
             line-height: 85%;
             margin-bottom: 40px;
         }
-        .cta-group { display: flex; align-items: center; gap: 20px; }
-        .cta-button {
-            background-color: #2563EB;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 9999px;
-            font-size: 18px;
-            font-weight: 600;
+        
+        /* NEW STYLES FOR THE CUSTOM APP STORE BUTTON */
+        .app-store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
         }
-        .cta-button:hover { transform: translateY(-2px); }
-        .social-proof { display: flex; align-items: center; gap: 12px; font-size: 16px; color: #000; }
-        .avatars { display: flex; }
-        .avatar {
-            width: 36px; height: 36px; border-radius: 50%;
-            border: 2px solid #FF8FAB; margin-left: -12px; object-fit: cover;
+        .app-store-button:hover {
+            transform: translateY(-2px);
         }
+        .app-store-logo {
+            font-size: 36px;
+            line-height: 1;
+        }
+        .app-store-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+        .app-store-text-top {
+            font-size: 11px;
+            font-weight: 400;
+        }
+        .app-store-text-bottom {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
         .hero-images { flex-basis: 50%; }
         .illustration, .illustration-group { position: absolute; pointer-events: none; }
         .illustration-group {
@@ -151,7 +167,6 @@
             }
             .hero-text { flex-basis: auto; }
             .hero-text h1 { font-size: 48px; }
-            .cta-group { justify-content: center; flex-direction: column; gap: 15px; }
             .hero-images, .illustration, .illustration-group { display: none; }
             
             .mobile-only { display: block; }
@@ -201,16 +216,6 @@
             footer { padding: 20px 0; text-align: center; }
             .footer-divider { display: none; }
             footer p { color: #000; }
-            
-            .social-proof { 
-                font-size: 14px;
-                gap: 6px;
-            }
-            .avatar {
-                width: 18px;
-                height: 18px;
-                margin-left: -6px;
-            }
         }
     </style>
 
@@ -230,24 +235,21 @@
             <nav class="desktop-nav">
                 <a href="/support">Contact us</a>
                 <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a> <!-- CHANGED -->
+                <a href="/privacy">Privacy</a>
             </nav>
         </header>
 
         <main>
             <div class="hero-text">
                 <h1>Find every item at home in secs</h1>
-                <div class="cta-group">
-                    <a href="https://apps.apple.com/pt/app/home-inventory-keepiko/id6743376808?l=en-GB" class="cta-button" onclick="gtag('event', 'join_waitlist_click');"> Download app</a>
-                    <div class="social-proof">
-                        <div class="avatars">
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-khLazg7B8uE3ELhXEFQTvAnSp4U7wl.png" alt="User avatar" class="avatar" />
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q2WeQYvyVtCLKEdjCavgK3CmBSRvGc.png" alt="User avatar" class="avatar" />
-                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1ESZaJJaWCsW580pvV0c7QRMPTL0hH.png" alt="User avatar" class="avatar" />
-                        </div>
-                        <span>32+ others just joined</span>
+                <!-- CTA UPDATED FOR APP LAUNCH -->
+                <a href="https://apps.apple.com/pt/app/home-inventory-keepiko/id6743376808?l=en-GB" class="app-store-button" onclick="gtag('event', 'app_store_click');" target="_blank" rel="noopener noreferrer">
+                    <span class="app-store-logo"></span>
+                    <div class="app-store-text">
+                        <span class="app-store-text-top">Download on the</span>
+                        <span class="app-store-text-bottom">App Store</span>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="hero-images"><!-- Spacer --></div>
             
@@ -262,7 +264,7 @@
         <nav class="mobile-only mobile-nav">
             <a href="/support">Contact us</a>
             <a href="/terms">Terms</a>
-            <a href="/privacy">Privacy</a> <!-- CHANGED -->
+            <a href="/privacy">Privacy</a>
         </nav>
 
         <footer>
