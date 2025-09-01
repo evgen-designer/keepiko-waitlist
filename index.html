@@ -80,23 +80,24 @@
             margin-bottom: 40px;
         }
         
-        /* NEW STYLES FOR THE CUSTOM APP STORE BUTTON */
+        /* CUSTOM APP STORE BUTTON STYLES */
         .app-store-button {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background-color: #000;
+            background-color: #2563EB; /* CHANGED */
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 12px;
+            padding: 16px 32px; /* CHANGED */
+            border-radius: 9999px; /* CHANGED */
             text-decoration: none;
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .app-store-button:hover {
             transform: translateY(-2px);
         }
         .app-store-logo {
-            font-size: 36px;
+            font-size: 24px; /* Adjusted size */
             line-height: 1;
         }
         .app-store-text {
@@ -106,7 +107,7 @@
             line-height: 1.2;
         }
         .app-store-text-top {
-            font-size: 11px;
+            font-size: 12px; /* Adjusted size */
             font-weight: 400;
         }
         .app-store-text-bottom {
