@@ -2,88 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Keepiko</title>
-    <link rel="icon" href="https://www.keepiko.com/images/mini-logo.svg">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; background-color: #FF8FAB; margin: 0; }
-        .page-wrapper { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; margin-top: 20px; background-color: rgba(255, 255, 255, 0.2); border-radius: 16px; }
-        .logo-area { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #111; text-decoration: none; }
-        .logo-area img { height: 32px; }
-        nav { display: flex; gap: 30px; }
-        nav a { text-decoration: none; color: #111; font-weight: 500; font-size: 16px; }
-        .content { max-width: 800px; margin: 40px auto; padding: 40px; background-color: rgba(255, 255, 255, 0.75); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { margin-bottom: 30px; }
-        h2 { margin-top: 40px; }
-        p, ul { margin-bottom: 20px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        footer { padding: 20px 0; font-size: 14px; color: #111; font-weight: 400; text-align: center; }
-        .mobile-only, .header-text-mobile { display: none; }
-        @media (max-width: 1024px) {
-            .page-wrapper { padding: 0 20px; }
-            header { justify-content: center; margin-top: 25px; }
-            .header-text-desktop { display: none; }
-            .header-text-mobile { display: inline; }
-            nav.desktop-nav { display: none; }
-            .mobile-only { display: block; }
-            .mobile-nav { display: flex; justify-content: center; gap: 30px; padding: 15px 25px; margin: 20px 0; background-color: rgba(255, 255, 255, 0.2); border-radius: 16px; }
-            .mobile-nav a { font-size: 14px; }
-            footer p { color: #111; }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Privacy Policy - JoliTree</title>
+    
+    <link rel="icon" type="image/png" href="../images/ornaments/ornament_red.png">
+    <link rel="apple-touch-icon" href="../images/ornaments/ornament_red.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1',
+                            400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155',
+                            800: '#1e293b', 900: '#0f172a'
+                        }
+                    }
+                }
+            }
         }
+    </script>
+
+    <style>
+        body { 
+            overscroll-behavior: none; 
+            background-color: #F8FAFC;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hide Scrollbars */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
-    <!-- Analytics -->
-    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "snxmk8dbb2"); </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMQ205WG9P"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-QMQ205WG9P'); </script>
 </head>
-<body>
-    <div class="page-wrapper">
-        <header>
-            <a href="/" class="logo-area">
-                <img src="https://www.keepiko.com/images/mini-logo.svg" alt="Keepiko Logo">
-                <span class="header-text-desktop">Keepiko - Simple home inventory app</span>
-                <span class="header-text-mobile">Keepiko - Simple home inventory</span>
+<body class="flex flex-col min-h-screen">
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="w-full bg-white border-b border-slate-200 px-6 py-4 flex items-start justify-between shrink-0 relative z-20">
+        <div class="flex items-center h-full">
+            <a href="../index.html" class="text-slate-900 text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity">
+                JoliTree
             </a>
-            <nav class="desktop-nav">
-                <a href="/support">Contact us</a>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-            </nav>
-        </header>
-        <div class="content">
-            <h1>Privacy Policy</h1>
-            <h2>Your privacy is my priority</h2>
-            <p>I want you to feel safe using Keepiko. This policy explains what data the app uses and, more importantly, what it doesn't do.</p>
-            <h2>Who I am</h2>
-            <p><strong>App:</strong> Keepiko<br><strong>Creator:</strong> IEVGEN KUZNIETSOV<br><strong>Contact:</strong> keepiko.info@gmail.com</p>
-            <h2>Your Data Stays On Your Device</h2>
-            <p>I designed Keepiko to be a private, offline-first app. All the information you enter—your rooms, spaces, boxes, items, and photos—is stored only on your device using Apple's secure SwiftData framework.</p>
-            <ul><li>I do not have servers that collect your inventory data.</li><li>I cannot see what you've stored or look at your photos.</li><li>If you delete the app, all of its data is deleted from your device.</li></ul>
-            <h2>Backups</h2>
-            <p>You have the option to create a backup of your data. This backup file is saved to a location you choose (like iCloud Drive or your computer) and remains completely under your control. I never have access to it.</p>
-            <h2>Third-Party Services</h2>
-            <p>To provide certain features, I use a few trusted third-party services. These services have their own privacy policies and only have access to the specific data they need to function. They never have access to your inventory data.</p>
-            <ul><li><strong>Apple:</strong> Handles all payment processing for Keepiko Plus subscriptions securely. I never see your payment information.</li><li><strong>RevenueCat:</strong> Helps me verify your subscription status (e.g., to unlock Plus features) and restore your purchases. To do this, RevenueCat uses an anonymous User ID and your Purchase History.</li><li><strong>WishKit:</strong> Allows you to submit feature requests and feedback. To manage your suggestions, WishKit uses an anonymous User ID. You may optionally provide your Email Address so I can contact you about your feedback.</li></ul>
-            <h2>Anonymous Diagnostics</h2>
-            <p>To find and fix bugs, the app may collect anonymous Crash Data and Performance Data. This information is not linked to your identity and helps me improve the app's stability and performance.</p>
-            <h2>Children's Privacy</h2>
-            <p>Keepiko is not directed to children under the age of 13. I do not knowingly collect any personal information from children.</p>
-            <h2>Changes to This Policy</h2>
-            <p>If I make changes to this policy, I'll update this page and change the date below.</p>
-            <p>If you have any questions about your privacy, please don't hesitate to email me.</p>
-            <p><em>Last updated: August 16, 2025</em></p>
         </div>
-        <nav class="mobile-only mobile-nav">
-            <a href="/support">Contact us</a>
-            <a href="/terms">Terms</a>
-            <a href="/privacy">Privacy</a>
-        </nav>
-        <footer>
-            <p>© 2025 Keepiko. All rights reserved.</p>
-        </footer>
-    </div>
+        <div class="hidden md:flex flex-col items-end gap-1">
+            <nav class="flex gap-5 text-[15px] font-medium text-slate-600">
+                <a href="../contact/" class="hover:text-slate-900 transition-colors">Contact</a>
+                <a href="#" class="text-slate-900 cursor-default">Privacy</a>
+                <a href="../terms/" class="hover:text-slate-900 transition-colors">Terms</a>
+            </nav>
+            <div class="text-[10px] text-slate-400 tracking-wide">
+                © 2025 JoliTree. All rights reserved.
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 flex items-center justify-center p-4 w-full">
+        
+        <div class="max-w-3xl w-full bg-white p-8 md:p-12 rounded-[32px] shadow-sm border border-slate-100 text-left">
+            
+            <h1 class="text-3xl font-bold text-slate-900 mb-8 text-center">Privacy Policy</h1>
+            
+            <div class="space-y-6 text-slate-600 leading-relaxed text-[15px]">
+                
+                <h2 class="text-xl font-semibold text-slate-900 mt-4">Your privacy is my priority</h2>
+                <p>I want you to feel safe using JoliTree. This policy explains what data the app uses and, more importantly, what it doesn't do.</p>
+                
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Who I am</h2>
+                <p>
+                    <strong>App:</strong> JoliTree<br>
+                    <strong>Creator:</strong> Eugene Evgen<br>
+                    <strong>Contact:</strong> eugene.evgen.contact@gmail.com
+                </p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Your Data Stays On Your Device</h2>
+                <p>I designed JoliTree to be a private, offline-first app. All the information regarding your tree customizations and ornament placements is stored locally on your device.</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>I do not have servers that collect your usage data.</li>
+                    <li>I cannot see how you decorated your tree.</li>
+                    <li>If you delete the app, your local settings are deleted from your device.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Third-Party Services</h2>
+                <p>To provide certain features, I use a few trusted third-party services. These services have their own privacy policies and only have access to the specific data they need to function.</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Apple:</strong> Handles all payment processing securely. I never see your payment information.</li>
+                    <li><strong>RevenueCat:</strong> Helps me verify subscription status (if applicable) and restore purchases. To do this, RevenueCat uses an anonymous User ID.</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Anonymous Diagnostics</h2>
+                <p>To find and fix bugs, the app may collect anonymous Crash Data and Performance Data. This information is not linked to your identity and helps me improve the app's stability.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Children's Privacy</h2>
+                <p>JoliTree is not directed to children under the age of 13. I do not knowingly collect any personal information from children.</p>
+
+                <h2 class="text-xl font-semibold text-slate-900 mt-6">Changes to This Policy</h2>
+                <p>If I make changes to this policy, I'll update this page and change the date below.</p>
+                <p>If you have any questions about your privacy, please don't hesitate to email me.</p>
+                
+                <p class="pt-4 text-sm text-slate-400 italic">Last updated: November 25, 2025</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Mobile Footer -->
+    <footer class="md:hidden w-full py-8 flex flex-col items-center text-sm text-gray-600">
+        <div class="flex gap-4 mb-2">
+            <a href="../contact/" class="hover:text-gray-900">Contact</a>
+            <a href="#" class="text-gray-900 font-medium">Privacy</a>
+            <a href="../terms/" class="hover:text-gray-900">Terms</a>
+        </div>
+        <div class="text-gray-400 text-[10px]">© 2025 JoliTree. All rights reserved.</div>
+    </footer>
+
 </body>
 </html>
